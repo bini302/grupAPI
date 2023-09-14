@@ -39,7 +39,6 @@ public class RecommandController {
 
     @GetMapping("/api/resulting")
     public List<Optional<PlantsEntity>> resulting(HttpSession session, Model model) {
-        //ResponseEntity<List<Map<Long, Float>>>는 프론트랑 데이터 타입 맞추기 위해서 사용
 
         Long userAnswerId = (Long) session.getAttribute("userAnswerId");
         List<Map<Long, Float>> resultingPlantsList = new ArrayList<>();
@@ -49,7 +48,7 @@ public class RecommandController {
 
         Long levelABSId =recommandService.findLevelABS(userAnswerId);
         model.addAttribute("levelABSId", levelABSId);
-        System.out.println("-----level, answerId-----: "+userAnswerId);
+//        System.out.println("-----level, answerId-----: "+userAnswerId);
 
         plantsDTO=recommandService.getPlantsById(levelABSId);
         if(!containsPlantsId(resultingPlantsList, levelABSId)){
@@ -58,7 +57,7 @@ public class RecommandController {
         }
         Long temperatureABSId = recommandService.findTemperatureABS(userAnswerId);
         model.addAttribute("temperatureABSId", temperatureABSId);
-        System.out.println("-----temperature, answerId-----: "+userAnswerId);
+//        System.out.println("-----temperature, answerId-----: "+userAnswerId);
 
         plantsDTO=recommandService.getPlantsById(temperatureABSId);
 
@@ -68,7 +67,7 @@ public class RecommandController {
         }
         Long lightABSId = recommandService.findLightABS(userAnswerId);
         model.addAttribute("lightABSId", lightABSId);
-        System.out.println("-----light, answerId-----: "+userAnswerId);
+//        System.out.println("-----light, answerId-----: "+userAnswerId);
 
         plantsDTO=recommandService.getPlantsById(lightABSId);
         if(!containsPlantsId(resultingPlantsList, lightABSId)){
@@ -77,7 +76,7 @@ public class RecommandController {
         }
         Long waterABSId = recommandService.findWaterABS(userAnswerId);
         model.addAttribute("waterABSID", waterABSId);
-        System.out.println("-----water, answerId-----: "+userAnswerId);
+//        System.out.println("-----water, answerId-----: "+userAnswerId);
 
         plantsDTO=recommandService.getPlantsById(waterABSId);
         if(!containsPlantsId(resultingPlantsList, waterABSId)){
@@ -86,28 +85,20 @@ public class RecommandController {
         }
 
         resultingPlantsList.sort(Comparator.comparing(map -> map.values().iterator().next()));
-        System.out.println(resultingPlantsList);
 
         List<Long> resultPlantsId = new ArrayList<>();
+        List<Optional<PlantsEntity>> resultPlantsEntityList=new ArrayList<>();
+
         int count = 0;
         for (Map<Long, Float> resultMap : resultingPlantsList) {
             Long plantId = resultMap.keySet().iterator().next();
             resultPlantsId.add(plantId);
+            Optional<PlantsEntity> resultEntity = recommandService.getPlantsEntityById(plantId);
+            resultPlantsEntityList.add(resultEntity);
             count++;
             if (count == 3) {
                 break;
             }
-        }
-        model.addAttribute("resultPlantsId", resultPlantsId);
-        session.setAttribute("resultPlantsId", resultPlantsId);
-
-        List<Optional<PlantsEntity>> resultPlantsEntityList=new ArrayList<>();
-        for (int i = 0; i < resultPlantsId.size(); i++) {
-            Long plantsId = resultPlantsId.get(i);
-//            Map<Integer, Optional<PlantsEntity>> plantsEntityMap = new HashMap<>();
-            Optional<PlantsEntity> resultEntity = recommandService.getPlantsEntityById(plantsId);
-//            plantsEntityMap.put(i, resultEntity);
-            resultPlantsEntityList.add(resultEntity);
         }
         return resultPlantsEntityList;
     }
@@ -138,23 +129,23 @@ public class RecommandController {
         resultingPlantsList.add(resultingMap);
     }
 
-    @PostMapping("/api/resulting")
-    public String setAnswerSession(HttpSession session, Model model){
-
-        Long userAnswerId = (Long) session.getAttribute("userAnswerId");
-        RecommandDTO recommandDTO = recommandService.getAnswerById(userAnswerId);
-        model.addAttribute("userAnswerPlants", recommandDTO);
-
-        List<Long> resultPlantsId= (List<Long>) session.getAttribute("resultPlantsId");
-        for (int i = 0; i < resultPlantsId.size(); i++) {
-            Long plantsId = resultPlantsId.get(i);
-            String resultId="result"+i;
-            PlantsDTO resultDTO = recommandService.getPlantsById(plantsId);
-            model.addAttribute(resultId, resultDTO);
-            System.out.println("postResulting resultPlantsId.size(): "+resultPlantsId.size());
-        }
-        return "redirect:result";
-    }
+//    @PostMapping("/api/resulting")
+//    public String setAnswerSession(HttpSession session, Model model){
+//
+//        Long userAnswerId = (Long) session.getAttribute("userAnswerId");
+//        RecommandDTO recommandDTO = recommandService.getAnswerById(userAnswerId);
+//        model.addAttribute("userAnswerPlants", recommandDTO);
+//
+//        List<Long> resultPlantsId= (List<Long>) session.getAttribute("resultPlantsId");
+//        for (int i = 0; i < resultPlantsId.size(); i++) {
+//            Long plantsId = resultPlantsId.get(i);
+//            String resultId="result"+i;
+//            PlantsDTO resultDTO = recommandService.getPlantsById(plantsId);
+//            model.addAttribute(resultId, resultDTO);
+////            System.out.println("postResulting resultPlantsId.size(): "+resultPlantsId.size());
+//        }
+//        return "redirect:result";
+//    }
 
     @GetMapping("/api/result")
     public String result(HttpSession session, Model model) {
@@ -192,4 +183,12 @@ public class RecommandController {
             return ResponseEntity.badRequest().build();
         }
     }
+
+//    @GetMapping("/plantsPicUrl"){
+//        public String getPlantsPicURL(@RequestParam("plantsPicId")){
+//            String plantsPicUrl=recommandService.
+//            return plantsPicUrl;
+//
+//        }
+//    }
 }
