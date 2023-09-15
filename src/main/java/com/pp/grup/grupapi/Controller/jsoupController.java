@@ -26,7 +26,7 @@ public class jsoupController {
 
     //크롤링 검색을 한 이후 결과 값을 보여줌
     @PostMapping("/searchSubmit")
-    public String handleSubmit(@RequestParam("searchKeyword") String searchKeyword, Model model) throws IOException {
+    public String handleSubmit(@RequestParam("searchKeyword") String searchKeyword) throws IOException {
         jsoupService.searchPlant(searchKeyword);
         String searchName = UriUtils.encode(searchKeyword, StandardCharsets.UTF_8);
         return "redirect:/entities?searchName=" + searchName;

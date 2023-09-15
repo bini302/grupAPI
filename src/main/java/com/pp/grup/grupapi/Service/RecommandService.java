@@ -74,6 +74,8 @@ public class RecommandService {
         }
     }
 
+//    public String getPlantsPicUrl
+
     public void setPlantsSelected(Long plantsId){
         plantsRepository.setPlantsSelected(plantsId);
     }

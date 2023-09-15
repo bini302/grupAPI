@@ -184,11 +184,19 @@ public class RecommandController {
         }
     }
 
-//    @GetMapping("/plantsPicUrl"){
-//        public String getPlantsPicURL(@RequestParam("plantsPicId")){
-//            String plantsPicUrl=recommandService.
-//            return plantsPicUrl;
-//
-//        }
-//    }
+
+    @PostMapping("/api/resultModal")
+    public ResponseEntity<PlantsDTO> setPlantsSelected(@RequestParam("plantsId") Long plantsId){
+        if (plantsId!=null) {
+            try {
+                PlantsDTO resultDTO = recommandService.getPlantsById(plantsId);
+                recommandService.setPlantsSelected(plantsId);
+                return ResponseEntity.ok(resultDTO);
+            } catch (Exception e) {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+            }
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+    }
 }
