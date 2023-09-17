@@ -17,6 +17,10 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.*;
 
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
+//import static jdk.internal.logger.DefaultLoggerFinder.SharedLoggers.system;
+
 @RestController
 @RequiredArgsConstructor
 public class RecommandController {
@@ -186,17 +190,17 @@ public class RecommandController {
 
 
     @PostMapping("/api/resultModal")
-    public ResponseEntity<PlantsDTO> setPlantsSelected(@RequestParam("plantsId") Long plantsId){
-        if (plantsId!=null) {
+    public String setPlantsSelected(@RequestBody PlantsDTO plantsDTO){
+        Long id = plantsDTO.getPlantsId();
+        if (id!=null) {
             try {
-                PlantsDTO resultDTO = recommandService.getPlantsById(plantsId);
-                recommandService.setPlantsSelected(plantsId);
-                return ResponseEntity.ok(resultDTO);
+                recommandService.setPlantsSelected(id);
+                return "set selected +1";
             } catch (Exception e) {
-                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+                return "selected failed";
             }
         } else {
-            return ResponseEntity.badRequest().build();
+            return "selected failed";
         }
     }
 }
