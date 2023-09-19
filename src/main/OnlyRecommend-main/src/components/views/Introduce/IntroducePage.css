@@ -1,0 +1,48 @@
+.team-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+  
+.team-member {
+    background-color: #f2f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+}
+  
+.team-member h2 {
+    margin-top: 0;
+    color: #333;
+    margin-bottom: 5px;
+}
+  
+.team-member p {
+    color: #555;
+    margin: 0;
+    font-size: 21px;
+}
+  
+.team-member a {
+    color: #c0eb75;
+    text-decoration: none;
+    font-weight: bold;
+    
+    font-size: 21px;
+}
+.IntroduceJOONGBUImg{
+    text-align: center;
+    position: relative;
+
+    width: 40%;
+}

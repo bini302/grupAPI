@@ -1,0 +1,49 @@
+.recommendResultul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.recommendResultli{
+
+}
+.recommendResultWi{
+    font-size: 20px;
+    color: #c0eb75;
+}
+.recommendResultRanking{
+    text-decoration: underline;
+}
+.recommendResultButton{
+    margin-top: 10px;
+    width: 30%;
+}
+.recommendResultModal{
+    display: flex;
+    width: 500px;
+    height: 600px;
+    background-color: white;
+    margin: auto;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    border:2px solid  #e9e9e9;
+    justify-content: space-around;
+}
+
+.modalCloseButton{
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.plantExplain{
+    list-style: none;
+    text-align: center;
+}
+
+.plantExplainTitle{
+    color: #c0eb75;
+    font-size: 25px;
+}

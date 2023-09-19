@@ -1,0 +1,138 @@
+{
+  "comments": [
+    {
+      "id": 0,
+      "temperature": 5,
+      "light": 4,
+      "water": 3,
+      "level": 3
+    },
+    {
+      "id": 1,
+      "plantsName": "장미"
+    },
+    {
+      "id": 2,
+      "plantsName": "국화"
+    },
+    {
+      "id": 3,
+      "plantsName": "몬스테라"
+    },
+    {
+      "searchKeyword": "fas",
+      "id": 4
+    },
+    {
+      "searchKeyword": "dsd",
+      "id": 5
+    },
+    {
+      "searchKeyword": "ㅇㄻ",
+      "id": 6
+    },
+    {
+      "searchKeyword": "ㅁㅇㄹㄴ",
+      "id": 7
+    },
+    {
+      "searchName": "",
+      "id": 8
+    },
+    {
+      "searchName": "",
+      "id": 9
+    },
+    {
+      "searchKeyword": "ㄹㄴㄹㅇㅁㄴ",
+      "id": 10
+    },
+    {
+      "searchKeyword": "dfa",
+      "id": 11
+    }
+  ],
+  "plantsData": [
+    {
+      "id": 1,
+      "plantsName": "장미",
+      "plantsPic": "사진넣기",
+      "plantsLevel": "키우기 쉬운편입니다",
+      "plantsWater": "물을 매우 좋아합니다",
+      "plantsEffect": "공기정화에 탁월",
+      "plantsNotice": "공기정화에 탁월",
+      "temperature": 5,
+      "light": 4,
+      "water": 3,
+      "level": 3
+    },
+    {
+      "id": 2,
+      "plantsName": "국화",
+      "plantsPic": "사진넣기",
+      "plantsLevel": "키우기 쉬운편입니다",
+      "plantsWater": "물을 매우 좋아합니다",
+      "plantsEffect": "공기정화에 탁월",
+      "plantsNotice": "공기정화에 탁월",
+      "temperature": 5,
+      "light": 4,
+      "water": 3,
+      "level": 3
+    },
+    {
+      "id": 3,
+      "plantsName": "몬스테라",
+      "plantsPic": "사진넣기",
+      "plantsLevel": "키우기 쉬운편입니다",
+      "plantsWater": "물을 매우 좋아합니다",
+      "plantsEffect": "공기정화에 탁월",
+      "plantsNotice": "공기정화에 탁월",
+      "temperature": 5,
+      "light": 4,
+      "water": 3,
+      "level": 3
+    }
+  ],
+  "selectedPlantsData": {
+    "id": 1,
+    "plantsName": "장미",
+    "plantsPic": "사진넣기",
+    "plantsLevel": "키우기 쉬운편입니다",
+    "plantsWater": "물을 매우 좋아합니다",
+    "plantsEffect": "공기정화에 탁월",
+    "plantsNotice": "공기정화에 탁월"
+  },
+  "crawlingData": [
+    {
+      "id": 1,
+      "storeName": "이슬이네꽃",
+      "price": 10000,
+      "imageUrl": "https://shopping-phinf.pstatic.net/main_8675042/86750422966.jpg?type=f300",
+      "storeTitle": "국화맛집",
+      "storeLink": "https://smartstore.naver.com/kot-flower/products/9205922643?n_media=27758&n_query=%EA%B5%AD%ED%99%94&n_rank=1&n_ad_group=grp-a001-02-000000037279733&n_ad=nad-a001-02-000000263243748&n_campaign_type=2&n_mall_id=kotjumun&n_mall_pid=9205922643&n_ad_group_type=2&NaPm=ct%3Dlmijwvfc%7Cci%3D0zu0002ZpK9z4rptVv0%5F%7Ctr%3Dpla%7Chk%3D63574a9eab5b15c3fa5815a2f8b9b56a2a379d86"
+    },
+    {
+      "id": 2,
+      "storeName": "서이슬이네꽃집",
+      "price": 8500,
+      "imageUrl": "https://shopping-phinf.pstatic.net/main_8675042/86750422966.jpg?type=f300",
+      "storeTitle": "국화맛집",
+      "storeLink": "https://smartstore.naver.com/kot-flower/products/9205922643?n_media=27758&n_query=%EA%B5%AD%ED%99%94&n_rank=1&n_ad_group=grp-a001-02-000000037279733&n_ad=nad-a001-02-000000263243748&n_campaign_type=2&n_mall_id=kotjumun&n_mall_pid=9205922643&n_ad_group_type=2&NaPm=ct%3Dlmijwvfc%7Cci%3D0zu0002ZpK9z4rptVv0%5F%7Ctr%3Dpla%7Chk%3D63574a9eab5b15c3fa5815a2f8b9b56a2a379d86"
+    },
+    {
+      "id": 3,
+      "storeName": "유이슬이네꽃집",
+      "price": 8000,
+      "imageUrl": "https://shopping-phinf.pstatic.net/main_8675042/86750422966.jpg?type=f300",
+      "storeTitle": "국화맛집",
+      "storeLink": "https://smartstore.naver.com/kot-flower/products/9205922643?n_media=27758&n_query=%EA%B5%AD%ED%99%94&n_rank=1&n_ad_group=grp-a001-02-000000037279733&n_ad=nad-a001-02-000000263243748&n_campaign_type=2&n_mall_id=kotjumun&n_mall_pid=9205922643&n_ad_group_type=2&NaPm=ct%3Dlmijwvfc%7Cci%3D0zu0002ZpK9z4rptVv0%5F%7Ctr%3Dpla%7Chk%3D63574a9eab5b15c3fa5815a2f8b9b56a2a379d86"
+    },
+    {
+      "searchName": "as",
+      "id": 4
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
